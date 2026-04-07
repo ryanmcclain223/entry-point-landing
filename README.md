@@ -1,2 +1,2 @@
 # entry-point-landing
-EntryPoint landing page + waitlist API
+EntryPoint landing page & waitlist API
