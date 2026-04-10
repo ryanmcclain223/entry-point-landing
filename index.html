@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EntryPoint — Deals Find You</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body id="top">
 
 <!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo" style="display:flex;align-items:center;gap:10px;text-decoration:none"><img src="assets/images/entrypoint-logo-horizontal.png" alt="EntryPoint" style="height:36px;width:auto;object-fit:contain"></a>
+  <a href="#top" class="nav-logo"><img src="assets/images/entrypoint-logo-horizontal.png" alt="EntryPoint" style="height:36px;width:auto;object-fit:contain"></a>
   <div class="nav-links">
     <a href="#how" class="nav-link">How it works</a>
     <a href="#score" class="nav-link">Deal Score</a>
@@ -20,207 +20,671 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-bg">
-    <div class="hero-orb1"></div>
-    <div class="hero-orb2"></div>
-    <div class="hero-grid"></div>
-  </div>
-  <div style="margin-bottom:28px;animation:fadeUp .5s ease both"><img src="assets/images/entrypoint-logo-stacked.png" alt="EntryPoint" style="height:100px;width:auto;object-fit:contain"></div>
-  <div class="hero-eyebrow"><div class="eyebrow-dot"></div> Now live in Richmond, VA</div>
-  <h1 class="hero-h1">Never miss a<br><span class="hi">great deal again.</span></h1>
-  <p class="hero-sub">EntryPoint continuously monitors the Richmond market, scores every listing, and texts you the moment a deal matching your criteria hits — before anyone else sees it.</p>
-  <div id="heroSuccess" class="hero-success">&#10003; You're on the list — we'll reach out when early access opens.</div>
-  <div class="hero-form" id="heroForm">
-    <input class="hero-input" id="heroEmail" type="email" placeholder="Enter your email address">
-    <button class="hero-btn" onclick="heroSubmit()">Get Early Access</button>
-  </div>
-  <div class="hero-social">
-    <div class="avatars">
-      <div class="av">&#128100;</div><div class="av">&#128100;</div><div class="av">&#128100;</div><div class="av">&#128100;</div>
-    </div>
-    <span>Join <strong id="waitlistCount" style="color:var(--text)">37 investors</strong> already on the waitlist</span>
-  </div>
-  <div class="hero-disclaimer">No credit card. No spam. Unsubscribe anytime.</div>
 
-  <!-- PHONE MOCKUPS -->
-  <div style="display:flex;gap:48px;justify-content:center;align-items:flex-start;margin-top:48px;flex-wrap:wrap;animation:fadeUp .7s .6s ease both">
+<!-- ═══════════════════════════════════════════════════
+     HERO — Dark, centered, Syne headline, phones floating
+     ═══════════════════════════════════════════════════ -->
+<section class="s-dark hero-section">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-headline-group">
+        <h1 class="hero-h1">Never miss a<br><span class="hi">great deal</span><br>again.</h1>
+      </div>
 
-    <!-- Phone 1: Deal Feed -->
-    <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
-      <div style="font-size:14px;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.3px"><span style="color:#2ecc71">Deal</span> Feed</div>
-      <div style="width:220px;height:480px;background:#0a0b0f;border-radius:32px;border:6px solid #1a1d26;box-shadow:0 30px 80px rgba(0,0,0,0.7),0 0 0 1px rgba(46,204,113,0.1);overflow:hidden;position:relative;display:flex;flex-direction:column">
-        <!-- Phone notch -->
-        <div style="height:28px;background:#0a0b0f;display:flex;align-items:center;justify-content:center">
-          <div style="width:60px;height:6px;background:#1a1d26;border-radius:3px"></div>
-        </div>
-        <!-- App header -->
-        <div style="background:#0e1116;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06)">
-          <span style="font-size:12px;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans',sans-serif">Entry<span style="color:#2ecc71">Point</span></span>
-          <div style="display:flex;gap:6px">
-            <div style="width:22px;height:22px;border-radius:50%;background:#1a1d26;display:flex;align-items:center;justify-content:center;font-size:10px">🔔</div>
-            <div style="width:22px;height:22px;border-radius:50%;background:#1a1d26;display:flex;align-items:center;justify-content:center;font-size:10px">👤</div>
+      <div class="hero-support-group">
+        <p class="hero-sub">EntryPoint continuously monitors and analyzes every property in your market and alerts you the moment a deal is worth your time — with a clear score, real numbers, and zero guesswork.</p>
+
+        <div class="hero-form-wrap">
+          <div id="heroSuccess" class="hero-success">&#10003; You're on the list — we'll reach out when early access opens.</div>
+          <div class="hero-form" id="heroForm">
+            <input class="hero-input" id="heroEmail" type="email" placeholder="Enter your email address">
+            <button class="hero-btn" onclick="heroSubmit()">Get Early Access</button>
           </div>
-        </div>
-        <!-- Feed header -->
-        <div style="padding:8px 12px 4px;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:12px;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans',sans-serif">Richmond <span style="color:#2ecc71">Deals</span></span>
-          <span style="font-size:8px;font-weight:700;color:#2ecc71;background:rgba(46,204,113,0.1);padding:2px 7px;border-radius:8px">LIVE</span>
-        </div>
-        <!-- Filter chips -->
-        <div style="display:flex;gap:5px;padding:4px 12px 8px;overflow:hidden">
-          <div style="padding:3px 9px;border-radius:12px;font-size:8px;font-weight:700;background:rgba(46,204,113,0.15);border:1px solid #2ecc71;color:#2ecc71;white-space:nowrap">All</div>
-          <div style="padding:3px 9px;border-radius:12px;font-size:8px;font-weight:600;background:#1a1d26;border:1px solid rgba(255,255,255,0.1);color:#8aab96;white-space:nowrap">Score 80+</div>
-          <div style="padding:3px 9px;border-radius:12px;font-size:8px;font-weight:600;background:#1a1d26;border:1px solid rgba(255,255,255,0.1);color:#8aab96;white-space:nowrap">Drops</div>
-        </div>
-        <!-- Deal Card 1 -->
-        <div style="margin:0 8px 8px;background:#12141a;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.07)">
-          <div style="height:70px;background:#1a1d26;position:relative;overflow:hidden">
-            <img src="assets/images/Stock Home 1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top">
-            <div style="position:absolute;top:6px;left:6px;background:rgba(46,204,113,0.25);border:1px solid rgba(46,204,113,0.5);border-radius:10px;padding:2px 7px;font-size:9px;font-weight:700;color:#2ecc71">● 91</div>
-            <div style="position:absolute;top:6px;right:6px;background:rgba(255,77,106,0.3);border:1px solid rgba(255,77,106,0.3);border-radius:5px;padding:2px 6px;font-size:7px;font-weight:700;color:#ff8fa0">📉 DROP</div>
-            <div style="position:absolute;bottom:6px;left:8px;font-size:13px;font-weight:800;color:#fff;font-family:'DM Mono',monospace">$249K</div>
-            <div style="position:absolute;bottom:6px;right:8px;font-size:7px;color:rgba(255,255,255,0.6);text-align:right">1822 Grove Ave<br>Scott's Addition</div>
+          <div class="hero-eyebrow hero-eyebrow-secondary">
+            <div class="eyebrow-dot"></div>
+            Now live in Richmond, VA
           </div>
-          <div style="padding:7px 10px">
-            <div style="display:flex;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);margin-bottom:6px">
-              <div style="flex:1;padding:5px 4px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)">
-                <div style="font-size:7px;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px">CF</div>
-                <div style="font-size:10px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">+$620</div>
-              </div>
-              <div style="flex:1;padding:5px 4px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)">
-                <div style="font-size:7px;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px">CAP</div>
-                <div style="font-size:10px;font-weight:700;color:#3b6fd4;font-family:'DM Mono',monospace">8.2%</div>
-              </div>
-              <div style="flex:1;padding:5px 4px;text-align:center">
-                <div style="font-size:7px;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px">IRR</div>
-                <div style="font-size:10px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">16.4%</div>
-              </div>
+          <div class="hero-social">
+            <div class="avatars">
+              <div class="av">&#128100;</div>
+              <div class="av">&#128100;</div>
+              <div class="av">&#128100;</div>
+              <div class="av">&#128100;</div>
             </div>
-            <div style="background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.12);border-radius:6px;padding:5px 7px;font-size:8px;color:#8aab96">Underpriced by <strong style="color:#2ecc71">$38,000</strong></div>
+            <span>Join <strong id="waitlistCount" style="color:#f3f7f4">37 investors</strong> already on the waitlist</span>
           </div>
-        </div>
-        <!-- Deal Card 2 -->
-        <div style="margin:0 8px 12px;background:#12141a;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.07)">
-          <div style="height:70px;background:#1a1d26;position:relative;overflow:hidden">
-            <img src="assets/images/Stock Home 2.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center">
-            <div style="position:absolute;top:6px;left:6px;background:rgba(46,204,113,0.25);border:1px solid rgba(46,204,113,0.5);border-radius:10px;padding:2px 7px;font-size:9px;font-weight:700;color:#2ecc71">● 93</div>
-            <div style="position:absolute;bottom:6px;left:8px;font-size:12px;font-weight:800;color:#fff;font-family:'DM Mono',monospace">$425K</div>
-            <div style="position:absolute;bottom:6px;right:8px;font-size:7px;color:rgba(255,255,255,0.6);text-align:right">Church Hill</div>
-          </div>
-          <div style="padding:6px 10px 4px;display:flex;gap:6px">
-            <div style="flex:1;text-align:center"><div style="font-size:7px;color:#556b5e;margin-bottom:1px">CF</div><div style="font-size:10px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">+$1,240</div></div>
-            <div style="flex:1;text-align:center"><div style="font-size:7px;color:#556b5e;margin-bottom:1px">CAP</div><div style="font-size:10px;font-weight:700;color:#3b6fd4;font-family:'DM Mono',monospace">9.8%</div></div>
-            <div style="flex:1;text-align:center"><div style="font-size:7px;color:#556b5e;margin-bottom:1px">IRR</div><div style="font-size:10px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">18.6%</div></div>
-          </div>
-          <div style="margin:0 10px 8px;background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.12);border-radius:6px;padding:5px 7px;font-size:8px;color:#8aab96">Underpriced by <strong style="color:#2ecc71">$43,000</strong></div>
-        </div>
-        <!-- Spacer pushes indicator to bottom -->
-        <div style="flex:1"></div>
-        <!-- Bottom home indicator -->
-        <div style="height:24px;background:#0a0b0f;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-          <div style="width:50px;height:4px;background:#2a2d36;border-radius:2px"></div>
+          <p class="hero-disclaimer">No credit card. No spam. Unsubscribe anytime.</p>
         </div>
       </div>
     </div>
 
-    <!-- Phone 2: Deal Alert -->
-    <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
-      <div style="font-size:14px;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.3px">Entry <span style="color:#2ecc71">Alert</span></div>
-      <div style="width:220px;height:480px;background:#0a0b0f;border-radius:32px;border:6px solid #1a1d26;box-shadow:0 30px 80px rgba(0,0,0,0.7),0 0 0 1px rgba(46,204,113,0.1);overflow:hidden;display:flex;flex-direction:column">
-        <!-- Phone notch -->
-        <div style="height:28px;background:#0a0b0f;display:flex;align-items:center;justify-content:space-between;padding:0 16px">
-          <span style="font-size:9px;color:#8aab96">9:41</span>
-          <div style="width:50px;height:5px;background:#1a1d26;border-radius:3px"></div>
-          <span style="font-size:9px;color:#8aab96">●●●</span>
-        </div>
-        <!-- Lock screen / notification area -->
-        <div style="padding:16px 12px;background:#0d0f0d;flex:1">
-          <div style="text-align:center;margin-bottom:20px">
-            <div style="font-size:28px;font-weight:200;color:#fff;letter-spacing:-1px">9:41</div>
-            <div style="font-size:11px;color:#8aab96">Saturday, March 28</div>
-          </div>
-          <!-- Notification card -->
-          <div style="background:rgba(18,20,26,0.95);border-radius:16px;padding:14px;border:1px solid rgba(46,204,113,0.2);box-shadow:0 8px 32px rgba(0,0,0,0.5)">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-              <div style="width:28px;height:28px;background:linear-gradient(135deg,#1a6b3a,#2ecc71);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0">EP</div>
-              <div>
-                <div style="font-size:11px;font-weight:700;color:#fff">📡 Entry Alert</div>
-                <div style="font-size:9px;color:#8aab96">now</div>
+    <!-- Phones -->
+    <div class="hero-visual">
+      <div class="hero-phone-cluster">
+        <div class="hero-phones-wrap">
+
+          <!-- Left phone: Deal Feed -->
+          <div class="phone-composition phone-composition-left">
+            <div class="phone-frame phone-frame-left">
+              <div class="phone-shell phone-shell-left" style="width:210px;height:460px;background:#0a0b0f;border-radius:30px;border:6px solid #1a1d26;box-shadow:0 40px 100px rgba(0,0,0,0.85),0 0 0 1px rgba(46,204,113,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column">
+                <div style="height:26px;background:#0a0b0f;display:flex;align-items:center;justify-content:center">
+                  <div style="width:55px;height:5px;background:#1a1d26;border-radius:3px"></div>
+                </div>
+                <div style="background:#0e1116;padding:7px 11px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06)">
+                  <span style="font-size:11px;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans',sans-serif">Entry<span style="color:#2ecc71">Point</span></span>
+                  <div style="display:flex;gap:5px">
+                    <div style="width:20px;height:20px;border-radius:50%;background:#1a1d26;display:flex;align-items:center;justify-content:center;font-size:9px">🔔</div>
+                    <div style="width:20px;height:20px;border-radius:50%;background:#1a1d26;display:flex;align-items:center;justify-content:center;font-size:9px">👤</div>
+                  </div>
+                </div>
+                <div style="padding:7px 11px 3px;display:flex;justify-content:space-between;align-items:center">
+                  <span style="font-size:11px;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans',sans-serif">Richmond <span style="color:#2ecc71">Deals</span></span>
+                  <span style="font-size:7px;font-weight:700;color:#2ecc71;background:rgba(46,204,113,0.1);padding:2px 6px;border-radius:7px">LIVE</span>
+                </div>
+                <div style="display:flex;gap:4px;padding:3px 11px 7px;overflow:hidden">
+                  <div style="padding:2px 8px;border-radius:10px;font-size:7px;font-weight:700;background:rgba(46,204,113,0.15);border:1px solid #2ecc71;color:#2ecc71;white-space:nowrap">All</div>
+                  <div style="padding:2px 8px;border-radius:10px;font-size:7px;font-weight:600;background:#1a1d26;border:1px solid rgba(255,255,255,0.1);color:#8aab96;white-space:nowrap">Score 80+</div>
+                  <div style="padding:2px 8px;border-radius:10px;font-size:7px;font-weight:600;background:#1a1d26;border:1px solid rgba(255,255,255,0.1);color:#8aab96;white-space:nowrap">Drops</div>
+                </div>
+                <div style="margin:0 7px 7px;background:#12141a;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.07)">
+                  <div style="height:64px;background:#1a1d26;position:relative;overflow:hidden">
+                    <img src="assets/images/Stock Home 1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top" alt="">
+                    <div style="position:absolute;top:5px;left:5px;background:rgba(46,204,113,0.25);border:1px solid rgba(46,204,113,0.5);border-radius:9px;padding:2px 6px;font-size:8px;font-weight:700;color:#2ecc71">● 91</div>
+                    <div style="position:absolute;top:5px;right:5px;background:rgba(255,77,106,0.3);border:1px solid rgba(255,77,106,0.3);border-radius:4px;padding:2px 5px;font-size:6px;font-weight:700;color:#ff8fa0">📉 DROP</div>
+                    <div style="position:absolute;bottom:5px;left:7px;font-size:12px;font-weight:800;color:#fff;font-family:'DM Mono',monospace">$249K</div>
+                    <div style="position:absolute;bottom:5px;right:7px;font-size:6px;color:rgba(255,255,255,0.6);text-align:right">1822 Grove Ave<br>Scott's Addition</div>
+                  </div>
+                  <div style="padding:6px 9px">
+                    <div style="display:flex;border-radius:5px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);margin-bottom:5px">
+                      <div style="flex:1;padding:4px 3px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)"><div style="font-size:6px;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1px">CF</div><div style="font-size:9px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">+$620</div></div>
+                      <div style="flex:1;padding:4px 3px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)"><div style="font-size:6px;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1px">CAP</div><div style="font-size:9px;font-weight:700;color:#3b6fd4;font-family:'DM Mono',monospace">8.2%</div></div>
+                      <div style="flex:1;padding:4px 3px;text-align:center"><div style="font-size:6px;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1px">IRR</div><div style="font-size:9px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">16.4%</div></div>
+                    </div>
+                    <div style="background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.12);border-radius:5px;padding:4px 6px;font-size:7px;color:#8aab96">Underpriced by <strong style="color:#2ecc71">$38,000</strong></div>
+                  </div>
+                </div>
+                <div style="margin:0 7px 7px;background:#12141a;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.07)">
+                  <div style="height:64px;background:#1a1d26;position:relative;overflow:hidden">
+                    <img src="assets/images/Stock Home 2.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center" alt="">
+                    <div style="position:absolute;top:5px;left:5px;background:rgba(46,204,113,0.25);border:1px solid rgba(46,204,113,0.5);border-radius:9px;padding:2px 6px;font-size:8px;font-weight:700;color:#2ecc71">● 93</div>
+                    <div style="position:absolute;bottom:5px;left:7px;font-size:12px;font-weight:800;color:#fff;font-family:'DM Mono',monospace">$425K</div>
+                    <div style="position:absolute;bottom:5px;right:7px;font-size:6px;color:rgba(255,255,255,0.6);text-align:right">Church Hill</div>
+                  </div>
+                  <div style="padding:5px 9px 4px;display:flex;gap:5px">
+                    <div style="flex:1;text-align:center"><div style="font-size:6px;color:#556b5e;margin-bottom:1px">CF</div><div style="font-size:9px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">+$1,240</div></div>
+                    <div style="flex:1;text-align:center"><div style="font-size:6px;color:#556b5e;margin-bottom:1px">CAP</div><div style="font-size:9px;font-weight:700;color:#3b6fd4;font-family:'DM Mono',monospace">9.8%</div></div>
+                    <div style="flex:1;text-align:center"><div style="font-size:6px;color:#556b5e;margin-bottom:1px">IRR</div><div style="font-size:9px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">18.6%</div></div>
+                  </div>
+                  <div style="margin:0 9px 7px;background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.12);border-radius:5px;padding:4px 6px;font-size:7px;color:#8aab96">Underpriced by <strong style="color:#2ecc71">$43,000</strong></div>
+                </div>
+                <div style="flex:1"></div>
+                <div style="height:22px;background:#0a0b0f;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <div style="width:46px;height:4px;background:#2a2d36;border-radius:2px"></div>
+                </div>
               </div>
-              <div style="margin-left:auto;width:8px;height:8px;border-radius:50%;background:#2ecc71;box-shadow:0 0 8px #2ecc71"></div>
-            </div>
-            <div style="font-size:12px;line-height:1.6;color:#f0f4f1">
-              🔥 <strong style="color:#2ecc71">Score 91</strong> — New deal in <strong style="color:#2ecc71">Scott's Addition</strong>
-            </div>
-            <div style="font-size:11px;color:#8aab96;margin-top:4px;line-height:1.5">
-              $249K · Cash Flow <strong style="color:#2ecc71">+$620/mo</strong> · 8.2% Cap Rate
-            </div>
-            <div style="font-size:10px;color:#8aab96;margin-top:2px">Underpriced by $38K · Tap to analyze →</div>
-            <div style="display:flex;gap:8px;margin-top:12px">
-              <div style="flex:1;background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.25);border-radius:8px;padding:6px;text-align:center;font-size:10px;font-weight:700;color:#2ecc71">View Deal</div>
-              <div style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:6px;text-align:center;font-size:10px;color:#8aab96">Dismiss</div>
             </div>
           </div>
-          <!-- Second older notification -->
-          <div style="background:rgba(18,20,26,0.7);border-radius:16px;padding:12px;margin-top:8px;border:1px solid rgba(255,255,255,0.06)">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-              <div style="width:24px;height:24px;background:#1a1d26;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#2ecc71;flex-shrink:0">EP</div>
-              <div style="font-size:10px;font-weight:700;color:#8aab96">📡 Entry Alert · 2h ago</div>
+
+          <!-- Right phone: Alert -->
+          <div class="phone-composition phone-composition-right">
+            <div class="phone-frame phone-frame-right">
+              <div class="phone-shell phone-shell-right" style="width:200px;height:420px;background:#0a0b0f;border-radius:28px;border:5px solid #1a1d26;box-shadow:0 30px 80px rgba(0,0,0,0.8),0 0 0 1px rgba(46,204,113,0.12);overflow:hidden;display:flex;flex-direction:column">
+                <div style="height:24px;background:#0a0b0f;display:flex;align-items:center;justify-content:space-between;padding:0 14px">
+                  <span style="font-size:8px;color:#8aab96">9:41</span>
+                  <div style="width:44px;height:4px;background:#1a1d26;border-radius:2px"></div>
+                  <span style="font-size:8px;color:#8aab96">●●●</span>
+                </div>
+                <div style="padding:14px 10px;background:#0d0f0d;flex:1">
+                  <div style="text-align:center;margin-bottom:16px">
+                    <div style="font-size:24px;font-weight:200;color:#fff;letter-spacing:-1px">9:41</div>
+                    <div style="font-size:9px;color:#8aab96">Saturday, March 28</div>
+                  </div>
+                  <div style="background:rgba(18,20,26,0.95);border-radius:14px;padding:12px;border:1px solid rgba(46,204,113,0.2);box-shadow:0 8px 24px rgba(0,0,0,0.5)">
+                    <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px">
+                      <div style="width:24px;height:24px;background:linear-gradient(135deg,#1a6b3a,#2ecc71);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0">EP</div>
+                      <div>
+                        <div style="font-size:10px;font-weight:700;color:#fff">📡 Entry Alert</div>
+                        <div style="font-size:8px;color:#8aab96">now</div>
+                      </div>
+                      <div style="margin-left:auto;width:7px;height:7px;border-radius:50%;background:#2ecc71;box-shadow:0 0 8px #2ecc71"></div>
+                    </div>
+                    <div style="font-size:11px;line-height:1.6;color:#f0f4f1">
+                      🔥 <strong style="color:#2ecc71">Score 91</strong> — New deal in <strong style="color:#2ecc71">Scott's Addition</strong>
+                    </div>
+                    <div style="font-size:10px;color:#8aab96;margin-top:3px;line-height:1.5">
+                      $249K · Cash Flow <strong style="color:#2ecc71">+$620/mo</strong> · 8.2% Cap
+                    </div>
+                    <div style="font-size:9px;color:#8aab96;margin-top:2px">Underpriced $38K · Tap to analyze →</div>
+                    <div style="display:flex;gap:6px;margin-top:10px">
+                      <div style="flex:1;background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.25);border-radius:7px;padding:5px;text-align:center;font-size:9px;font-weight:700;color:#2ecc71">View Deal</div>
+                      <div style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:7px;padding:5px;text-align:center;font-size:9px;color:#8aab96">Dismiss</div>
+                    </div>
+                  </div>
+                  <div style="background:rgba(18,20,26,0.7);border-radius:12px;padding:10px;margin-top:7px;border:1px solid rgba(255,255,255,0.06)">
+                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+                      <div style="width:20px;height:20px;background:#1a1d26;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#2ecc71;flex-shrink:0">EP</div>
+                      <div style="font-size:9px;font-weight:700;color:#8aab96">📡 Entry Alert · 2h ago</div>
+                    </div>
+                    <div style="font-size:9px;color:#8aab96;line-height:1.5">📉 Price drop — Manchester duplex<br>Now $239K · Score 84 · 44 DOM</div>
+                  </div>
+                </div>
+                <div style="height:20px;background:#0a0b0f;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <div style="width:44px;height:3px;background:#2a2d36;border-radius:2px"></div>
+                </div>
+              </div>
             </div>
-            <div style="font-size:10px;color:#8aab96;line-height:1.5">📉 Price drop — Manchester duplex<br>Now $239K · Score 84 · 44 DOM</div>
           </div>
-        </div>
-        <!-- Bottom indicator -->
-        <div style="height:24px;background:#0a0b0f;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-          <div style="width:50px;height:4px;background:#2a2d36;border-radius:2px"></div>
-        </div>
+
+        </div><!-- /hero-phones-wrap -->
+      </div><!-- /hero-phone-cluster -->
+    </div>
+  </div><!-- /hero-inner -->
+
+  <div class="hero-fade-bottom"></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PAIN SECTION
+     ═══════════════════════════════════════════════════ -->
+<section class="s-light section-wrap reveal">
+  <div class="container">
+    <div class="pain-shell">
+      <div class="pain-copy">
+        <div class="eyebrow">The Problem</div>
+        <h2 class="section-h2">Most investors are still stuck doing this manually.</h2>
+        <p class="section-sub">Thirty-plus hours disappear every week into tabs, calculators, rent guesses, spreadsheets, and hand-built assumptions. The work is slow, repetitive, and it still leaves you unsure.</p>
+      </div>
+      <div class="pain-highlight">
+        <div class="pain-highlight-value">30+ hrs</div>
+        <div class="pain-highlight-text">spent every week just trying to figure out which properties deserve a closer look.</div>
       </div>
     </div>
 
+    <div class="pain-grid reveal-stagger">
+      <div class="pain-card">
+        <div class="pain-icon">01</div>
+        <h3 class="pain-title">Too many tabs</h3>
+        <p class="pain-text">Zillow, Redfin, tax records, rent comps, lender notes, and spreadsheets all become one messy workflow.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">02</div>
+        <h3 class="pain-title">Manual data entry</h3>
+        <p class="pain-text">Every address, rent estimate, tax bill, and rehab assumption gets typed in by hand before you even know if the deal matters.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">03</div>
+        <h3 class="pain-title">Slow decisions</h3>
+        <p class="pain-text">By the time the numbers are cleaned up, the best opportunities are already gone or someone faster has moved first.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">04</div>
+        <h3 class="pain-title">Analysis paralysis</h3>
+        <p class="pain-text">Hours of work still end with uncertainty, because most tools give you estimates without enough context to trust them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     BROKEN WORKFLOW
+     ═══════════════════════════════════════════════════ -->
+<section class="s-dark section-wrap reveal">
+  <div class="container">
+    <div class="eyebrow">The Broken Workflow</div>
+    <h2 class="section-h2">The broken workflow today.</h2>
+    <p class="section-sub" style="max-width:760px">This is what most investors are still doing property after property, even though almost all of it is repetitive manual work.</p>
+
+    <div class="workflow-grid reveal-stagger">
+      <div class="workflow-step">
+        <div class="workflow-step-num">01</div>
+        <div class="workflow-step-text">Browse Zillow, Redfin, or Realtor until something looks maybe interesting.</div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">02</div>
+        <div class="workflow-step-text">Pull tax history, listing details, neighborhood context, and sales comps from different sources.</div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">03</div>
+        <div class="workflow-step-text">Estimate rents with shaky data from portals, comps, or a separate rent tool.</div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">04</div>
+        <div class="workflow-step-text">Open a spreadsheet and manually enter every number just to get a rough first pass.</div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">05</div>
+        <div class="workflow-step-text">Calculate cap rate, cash flow, CoC return, DSCR, and downside risk by hand.</div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">06</div>
+        <div class="workflow-step-text">Repeat the whole process across dozens of listings and hope a few survive.</div>
+      </div>
+    </div>
+
+    <div class="workflow-result">
+      <div class="workflow-result-label">End result</div>
+      <div class="workflow-result-copy">After a week of manual work, maybe two deals are actually worth pursuing if you are fast enough.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     ENTRYPOINT REPLACES THIS
+     ═══════════════════════════════════════════════════ -->
+<section class="s-light section-wrap reveal">
+  <div class="container">
+    <div class="replace-inner">
+      <div class="replace-header section-header">
+        <div class="eyebrow">The Antidote</div>
+        <h2 class="section-h2">EntryPoint replaces all of this.</h2>
+        <p class="section-sub">Instead of wrestling with disconnected tools, you get one system built for finding real opportunities quickly and deciding with confidence.</p>
+      </div>
+
+      <div class="replace-content section-content">
+        <div class="replace-grid reveal-stagger">
+          <div class="replace-card">
+            <div class="replace-kicker"><span class="replace-kicker-accent">One</span> feed</div>
+            <p class="replace-text">Every relevant property lands in one investor-focused deal feed instead of being buried across listing portals and notes.</p>
+          </div>
+          <div class="replace-card">
+            <div class="replace-kicker"><span class="replace-kicker-accent">One</span> score</div>
+            <p class="replace-text">Each property is ranked with a clear deal score backed by the actual inputs you need to review, not a vague black box.</p>
+          </div>
+          <div class="replace-card">
+            <div class="replace-kicker"><span class="replace-kicker-accent">One</span> decision</div>
+            <p class="replace-text">You can move from discovery to decision in minutes, without rebuilding the same spreadsheet logic every single time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     TRUST / TRANSPARENCY
+     ═══════════════════════════════════════════════════ -->
+<section class="s-dark section-wrap reveal">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-header section-header">
+        <div class="eyebrow">Trust & Transparency</div>
+        <h2 class="section-h2">No black box estimates.</h2>
+        <p class="section-sub">Investors do not need more mystery math. They need visible assumptions, transparent comps, and a clear signal for how confident the system actually is.</p>
+      </div>
+
+      <div class="trust-content section-content">
+        <div class="trust-grid reveal-stagger">
+          <div class="trust-card">
+            <div class="trust-title">Transparent assumptions</div>
+            <p class="trust-text">See the rent, expense, financing, and rehab assumptions driving the analysis instead of guessing what the tool decided for you.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-title">Visible supporting data</div>
+            <p class="trust-text">Review the comps and source context behind the recommendation so the model feels inspectable, not magical.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-title">Confidence levels</div>
+            <p class="trust-text">High-confidence opportunities should look different from thin-data guesses. EntryPoint makes that distinction explicit.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-title">No fake certainty</div>
+            <p class="trust-text">If the data is weak, the platform should say so clearly instead of presenting low-confidence numbers like facts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     COMPETITOR CONTRAST
+     ═══════════════════════════════════════════════════ -->
+<section class="s-light section-wrap reveal">
+  <div class="container">
+    <div class="eyebrow">Why Current Tools Fail</div>
+    <h2 class="section-h2">Why current tools fail investors.</h2>
+    <p class="section-sub" style="max-width:760px">Most platforms either leave you doing the work manually or hide the logic behind estimates you cannot trust. EntryPoint is built to solve both problems.</p>
+
+    <div class="contrast-board reveal-stagger">
+      <div class="contrast-column contrast-column-bad">
+        <div class="contrast-label">Current workflow</div>
+        <div class="contrast-item contrast-item-bad">&#10008; Manual spreadsheets</div>
+        <div class="contrast-item contrast-item-bad">&#10008; Inaccurate estimates</div>
+        <div class="contrast-item contrast-item-bad">&#10008; No real deal discovery</div>
+        <div class="contrast-item contrast-item-bad">&#10008; Too slow to act</div>
+      </div>
+      <div class="contrast-column contrast-column-good">
+        <div class="contrast-label">With EntryPoint</div>
+        <div class="contrast-item contrast-item-good">&#10003; Automated analysis</div>
+        <div class="contrast-item contrast-item-good">&#10003; Transparent data</div>
+        <div class="contrast-item contrast-item-good">&#10003; Real deal feed</div>
+        <div class="contrast-item contrast-item-good">&#10003; Instant alerts</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     LIVE MARKET TICKER
+     ═══════════════════════════════════════════════════ -->
+<div class="ticker-wrap">
+  <div class="ticker-label">
+    <div class="ticker-label-dot"></div> Live Market
+  </div>
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$249K</span> &nbsp;Scott's Addition &nbsp;<span class="t-score">Score 91</span> &nbsp;CF <span class="t-cf">+$620/mo</span> &nbsp;·&nbsp; Underpriced $38K</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$425K</span> &nbsp;Church Hill &nbsp;<span class="t-score">Score 93</span> &nbsp;CF <span class="t-cf">+$1,240/mo</span> &nbsp;·&nbsp; Underpriced $43K</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$239K</span> &nbsp;Manchester &nbsp;<span class="t-score">Score 84</span> &nbsp;CF <span class="t-cf">+$480/mo</span> &nbsp;·&nbsp; 44 DOM ↓</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$185K</span> &nbsp;Northside &nbsp;<span class="t-score">Score 87</span> &nbsp;CF <span class="t-cf">+$380/mo</span> &nbsp;·&nbsp; Underpriced $13K</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$315K</span> &nbsp;Fan District &nbsp;<span class="t-score">Score 89</span> &nbsp;CF <span class="t-cf">+$720/mo</span> &nbsp;·&nbsp; Underpriced $27K</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$275K</span> &nbsp;Carytown &nbsp;<span class="t-score">Score 86</span> &nbsp;CF <span class="t-cf">+$560/mo</span> &nbsp;·&nbsp; 31 DOM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$310K</span> &nbsp;Manchester 3-unit &nbsp;<span class="t-score">Score 88</span> &nbsp;CF <span class="t-cf">+$890/mo</span> &nbsp;·&nbsp; 9.1% Cap</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$198K</span> &nbsp;Southside &nbsp;<span class="t-score">Score 82</span> &nbsp;CF <span class="t-cf">+$310/mo</span> &nbsp;·&nbsp; Underpriced $19K</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$249K</span> &nbsp;Scott's Addition &nbsp;<span class="t-score">Score 91</span> &nbsp;CF <span class="t-cf">+$620/mo</span> &nbsp;·&nbsp; Underpriced $38K</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$425K</span> &nbsp;Church Hill &nbsp;<span class="t-score">Score 93</span> &nbsp;CF <span class="t-cf">+$1,240/mo</span> &nbsp;·&nbsp; Underpriced $43K</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$239K</span> &nbsp;Manchester &nbsp;<span class="t-score">Score 84</span> &nbsp;CF <span class="t-cf">+$480/mo</span> &nbsp;·&nbsp; 44 DOM ↓</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$185K</span> &nbsp;Northside &nbsp;<span class="t-score">Score 87</span> &nbsp;CF <span class="t-cf">+$380/mo</span> &nbsp;·&nbsp; Underpriced $13K</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$315K</span> &nbsp;Fan District &nbsp;<span class="t-score">Score 89</span> &nbsp;CF <span class="t-cf">+$720/mo</span> &nbsp;·&nbsp; Underpriced $27K</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$275K</span> &nbsp;Carytown &nbsp;<span class="t-score">Score 86</span> &nbsp;CF <span class="t-cf">+$560/mo</span> &nbsp;·&nbsp; 31 DOM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$310K</span> &nbsp;Manchester 3-unit &nbsp;<span class="t-score">Score 88</span> &nbsp;CF <span class="t-cf">+$890/mo</span> &nbsp;·&nbsp; 9.1% Cap</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> <span class="t-price">$198K</span> &nbsp;Southside &nbsp;<span class="t-score">Score 82</span> &nbsp;CF <span class="t-cf">+$310/mo</span> &nbsp;·&nbsp; Underpriced $19K</span>
   </div>
 </div>
 
-<!-- PRODUCT MOCKUP -->
-<!-- ORIGINAL MOCKUP PRESERVED BELOW FOR EASY SWAP BACK:
-<!~ PRODUCT MOCKUP ~>
-<div class="mockup-section reveal">
-  <div class="mockup-wrap">
-    <div class="mockup-bar">
-      <div class="m-dots"><div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div></div>
-      <div class="m-url">getentrypoint.com &mdash; Richmond Deal Feed</div>
-    </div>
-    <div class="mockup-app">
-      <div class="m-header">
-        <div class="m-logo"><img src="assets/images/image_01.png" alt="EntryPoint" style="height:44px;width:auto;object-fit:contain"></div>
-        <div class="m-pills"><div class="m-pill active">Deal Feed</div><div class="m-pill">Alerts</div><div class="m-pill">Analyzer</div></div>
+
+<!-- ═══════════════════════════════════════════════════
+     STATS — Light section
+     ═══════════════════════════════════════════════════ -->
+<section class="s-light section-wrap section-centered reveal">
+  <div class="container">
+    <div class="eyebrow">By the numbers</div>
+    <h2 class="section-h2">Built for speed.<br>Designed for deals.</h2>
+    <div class="stats-grid reveal-stagger">
+      <div class="stat-item">
+        <div class="stat-num" data-target="0" data-text="24/7" id="stat1">24/7</div>
+        <div class="stat-lbl">Continuous market monitoring</div>
       </div>
-      <div class="m-feed">
-        <div class="m-feed-hdr"><div class="m-feed-title">Richmond <span>Deals</span></div><div class="m-live">&#9679; LIVE</div></div>
-        <div class="m-cards">
-          <div class="m-card"><div class="m-card-img" style="background:linear-gradient(135deg,#0d1a0d,#1a2f1a)">&#127968;<div class="m-score great">&#9679; 91</div></div><div class="m-card-body"><div class="m-price">$249K</div><div class="m-addr">1822 Grove Ave &middot; Scott's Addition</div><div class="m-metrics"><div class="m-metric"><div class="m-metric-lbl">CF</div><div class="m-metric-val g">+$620</div></div><div class="m-metric"><div class="m-metric-lbl">Cap</div><div class="m-metric-val b">8.2%</div></div><div class="m-metric"><div class="m-metric-lbl">IRR</div><div class="m-metric-val g">16.4%</div></div></div><div class="m-uv">Underpriced by <strong>$38,000</strong></div></div></div>
-          <div class="m-card"><div class="m-card-img" style="background:linear-gradient(135deg,#0a1a0a,#152a15)">&#127959;<div class="m-score great">&#9679; 93</div></div><div class="m-card-body"><div class="m-price">$425K</div><div class="m-addr">3341 Church Hill Ter &middot; Church Hill</div><div class="m-metrics"><div class="m-metric"><div class="m-metric-lbl">CF</div><div class="m-metric-val g">+$1,240</div></div><div class="m-metric"><div class="m-metric-lbl">Cap</div><div class="m-metric-val b">9.8%</div></div><div class="m-metric"><div class="m-metric-lbl">IRR</div><div class="m-metric-val g">18.6%</div></div></div><div class="m-uv">Underpriced by <strong>$43,000</strong></div></div></div>
-          <div class="m-card"><div class="m-card-img" style="background:linear-gradient(135deg,#0d0d1a,#1a1a2f)">&#127960;<div class="m-score good">&#9679; 84</div></div><div class="m-card-body"><div class="m-price">$185K</div><div class="m-addr">4412 Northside Pkwy &middot; Northside</div><div class="m-metrics"><div class="m-metric"><div class="m-metric-lbl">CF</div><div class="m-metric-val g">+$480</div></div><div class="m-metric"><div class="m-metric-lbl">Cap</div><div class="m-metric-val b">7.6%</div></div><div class="m-metric"><div class="m-metric-lbl">IRR</div><div class="m-metric-val g">14.8%</div></div></div><div class="m-uv">Underpriced by <strong>$13,000</strong></div></div></div>
-        </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="91" id="stat2">91</div>
+        <div class="stat-lbl">Average top deal score this week</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="38" data-prefix="$" data-suffix="K" id="stat3">$38K</div>
+        <div class="stat-lbl">Avg undervaluation flagged</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="0" data-text="&lt;5s" id="stat4">&lt;5s</div>
+        <div class="stat-lbl">Time to full deal analysis</div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 
-END ORIGINAL MOCKUP -->
+<!-- ═══════════════════════════════════════════════════
+     HOW IT WORKS — Dark section
+     ═══════════════════════════════════════════════════ -->
+<section class="s-dark section-wrap section-centered reveal" id="how">
+  <div class="container">
+    <div class="eyebrow">How it works</div>
+    <h2 class="section-h2">From the market to your phone<br>before anyone else sees it</h2>
+    <p class="section-sub" style="margin:0 auto 72px">Three automated steps, zero manual effort on your part.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <div class="how-icon">&#128225;</div>
+        <div class="how-title">We monitor continuously</div>
+        <div class="how-desc">EntryPoint watches every active listing in Richmond around the clock — not once a day, continuously. New listings get scored the moment they appear.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <div class="how-icon">&#128202;</div>
+        <div class="how-title">Every deal gets scored</div>
+        <div class="how-desc">Our algorithm scores each property 0–100 based on price vs. true value, cash flow, days on market, and rent-to-price ratio. Only the best surface to the top.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <div class="how-icon">&#9889;</div>
+        <div class="how-title">You get the alert instantly</div>
+        <div class="how-desc">The moment a deal matches your parameters — score, cash flow, price, neighborhood — you get a text. Full analysis ready before you've even finished reading it.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="mockup-section reveal">
-  <div style="max-width:960px;width:100%;margin:0 auto">
-    <!-- Screen chrome wrapper -->
-    <div style="background:#0e1116;border-radius:22px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 40px 120px rgba(0,0,0,0.8),0 0 0 1px rgba(46,204,113,0.04);overflow:hidden">
-      <!-- Browser bar -->
+
+<!-- ═══════════════════════════════════════════════════
+     DEAL SCORE SHOWCASE — Light section
+     ═══════════════════════════════════════════════════ -->
+<section class="s-light section-wrap reveal" id="score">
+  <div class="container">
+    <div class="showcase-inner">
+
+      <div>
+        <div class="score-card">
+          <div class="sc-top">
+            <div>
+              <div class="sc-addr">1822 Grove Ave</div>
+              <div class="sc-sub">Scott's Addition &middot; Richmond, VA &middot; Single Family</div>
+            </div>
+            <div>
+              <div class="sc-score-num">91</div>
+              <div class="sc-score-lbl">Excellent Deal</div>
+            </div>
+          </div>
+          <div class="sc-uv">
+            <div style="font-size:18px">&#128176;</div>
+            <div>Underpriced by <strong>$38,000</strong> vs. estimated market value of $287,000</div>
+          </div>
+          <div class="sc-metrics">
+            <div class="sc-metric"><div class="sc-metric-lbl">Cash Flow</div><div class="sc-metric-val g">+$620</div></div>
+            <div class="sc-metric"><div class="sc-metric-lbl">Cap Rate</div><div class="sc-metric-val b">8.2%</div></div>
+            <div class="sc-metric"><div class="sc-metric-lbl">IRR</div><div class="sc-metric-val g">16.4%</div></div>
+            <div class="sc-metric"><div class="sc-metric-lbl">DSCR</div><div class="sc-metric-val">1.52</div></div>
+          </div>
+          <div class="sc-tags">
+            <span class="sc-tag r">&#128201; 2 Price Drops</span>
+            <span class="sc-tag a">&#9203; 54 Days on Market</span>
+            <span class="sc-tag g">&#128176; 18% Below Comps</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-text">
+        <div class="eyebrow">The EntryPoint Score</div>
+        <h2 class="section-h2">One number that tells you if a deal is worth your time</h2>
+        <p class="section-sub" style="max-width:100%">A proprietary 0–100 score built on real investment fundamentals — not Zestimate guesses.</p>
+        <div class="score-breakdown">
+          <div class="score-factor">
+            <div class="sf-icon">&#128201;</div>
+            <div class="sf-text">
+              <h4>Price vs. True Value</h4>
+              <p>We estimate what the property should sell for and show you exactly how much it's underpriced.</p>
+              <div class="sf-pct">40% of score</div>
+            </div>
+          </div>
+          <div class="score-factor">
+            <div class="sf-icon">&#128181;</div>
+            <div class="sf-text">
+              <h4>Cash Flow &amp; Cap Rate</h4>
+              <p>Real numbers based on local rent estimates, not national averages.</p>
+              <div class="sf-pct">30% of score</div>
+            </div>
+          </div>
+          <div class="score-factor">
+            <div class="sf-icon">&#9203;</div>
+            <div class="sf-text">
+              <h4>Days on Market</h4>
+              <p>Long DOM means motivated seller means negotiating power. We track it.</p>
+              <div class="sf-pct">15% of score</div>
+            </div>
+          </div>
+          <div class="score-factor">
+            <div class="sf-icon">&#128200;</div>
+            <div class="sf-text">
+              <h4>Rent-to-Price Ratio</h4>
+              <p>The single best indicator of long-term cash flow potential.</p>
+              <div class="sf-pct">15% of score</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     ALERT PREVIEW — Dark section
+     ═══════════════════════════════════════════════════ -->
+<section class="s-dark section-wrap reveal">
+  <div class="container">
+    <div class="alert-inner">
+
+      <div class="alert-text">
+        <div class="eyebrow">The Alert System</div>
+        <h2 class="section-h2">Your criteria.<br>Our engine.<br>Instant results.</h2>
+        <p class="section-sub" style="max-width:100%">Set your criteria once using a preset or build your own. EntryPoint monitors the market continuously and fires an Entry Alert the moment something matches — no checking required.</p>
+        <div class="alert-list">
+          <div class="alert-item-row">
+            <div class="ai-icon">&#127919;</div>
+            <div class="ai-text">
+              <h4>You set the rules</h4>
+              <p>Minimum score, cash flow floor, max price, property type, specific neighborhoods — your criteria, your way.</p>
+            </div>
+          </div>
+          <div class="alert-item-row">
+            <div class="ai-icon">&#128276;</div>
+            <div class="ai-text">
+              <h4>We fire instantly</h4>
+              <p>The moment a matching deal hits the market, your Entry Alert fires — because the difference between a deal and a missed deal is often hours.</p>
+            </div>
+          </div>
+          <div class="alert-item-row">
+            <div class="ai-icon">&#9889;</div>
+            <div class="ai-text">
+              <h4>Quick-start presets</h4>
+              <p>Cash Flow Investor, Balanced Investor, or Aggressive Deals — pick a preset and you're live in one tap.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert-phone">
+        <div class="alert-phone-hdr">&#128247; Live Entry Alert examples</div>
+        <div class="alert-notif new">
+          <div class="alert-notif-top"><div class="alert-dot"></div><div style="font-size:14px">&#128225;</div><div class="alert-notif-app">EntryPoint</div><div class="alert-notif-time">just now</div></div>
+          <div class="alert-notif-body">&#128293; <span class="hi">Score 91</span> &mdash; New deal in <span class="hi">Scott's Addition</span><br><span class="dim">$249K &middot; Cash Flow +$620/mo &middot; 8.2% Cap Rate</span><br><span class="dim">Underpriced by $38K &middot; Tap to analyze &rarr;</span></div>
+        </div>
+        <div class="alert-notif">
+          <div class="alert-notif-top"><div style="font-size:14px">&#128225;</div><div class="alert-notif-app">EntryPoint</div><div class="alert-notif-time">2h ago</div></div>
+          <div class="alert-notif-body">&#128201; <span class="hi">Price Drop</span> &mdash; Manchester duplex<br><span class="dim">Now $239K, down from $265K &middot; Score 84</span><br><span class="dim">44 days on market &middot; View deal &rarr;</span></div>
+        </div>
+        <div class="alert-notif">
+          <div class="alert-notif-top"><div style="font-size:14px">&#128225;</div><div class="alert-notif-app">EntryPoint</div><div class="alert-notif-time">5h ago</div></div>
+          <div class="alert-notif-body">&#127959; <span class="hi">Score 88</span> &mdash; 3-unit in <span class="hi">Manchester</span><br><span class="dim">$310K &middot; 9.1% Cap Rate &middot; CF +$890/mo</span><br><span class="dim">$38K below comps &middot; View deal &rarr;</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PROBLEM / SOLUTION — Light section
+     ═══════════════════════════════════════════════════ -->
+<section class="s-light section-wrap section-centered reveal">
+  <div class="container">
+    <div class="eyebrow">The problem</div>
+    <h2 class="section-h2">Most investors are too slow<br>and too manual</h2>
+    <p class="section-sub" style="margin:0 auto 72px">Good deals in Richmond go under contract fast. Spreadsheets and Zillow scrolling don't cut it.</p>
+    <div class="ps-grid" style="text-align:left">
+      <div class="ps-card prob">
+        <div class="ps-label p">&#10008; Without EntryPoint</div>
+        <div class="ps-item"><div class="ps-ico">&#128202;</div><div class="ps-txt"><strong>Spreadsheets are slow and error-prone</strong>You rebuild the same model for every property. By the time you're done, the deal is gone.</div></div>
+        <div class="ps-item"><div class="ps-ico">&#128269;</div><div class="ps-txt"><strong>Zillow gives you no real signal</strong>Every listing looks the same. Nothing tells you what's actually undervalued.</div></div>
+        <div class="ps-item"><div class="ps-ico">&#9203;</div><div class="ps-txt"><strong>Good deals disappear in hours</strong>Serious investors move fast. Casual checking once a day means you're always too late.</div></div>
+        <div class="ps-item"><div class="ps-ico">&#127922;</div><div class="ps-txt"><strong>Decisions based on gut, not data</strong>Most investors buy on vibes and hope for the best.</div></div>
+      </div>
+      <div class="ps-card sol">
+        <div class="ps-label s">&#10003; With EntryPoint</div>
+        <div class="ps-item"><div class="ps-ico">&#9889;</div><div class="ps-txt"><strong>Instant deal clarity</strong>Cash flow, cap rate, IRR, DSCR — calculated automatically the moment you open a deal.</div></div>
+        <div class="ps-item"><div class="ps-ico">&#127919;</div><div class="ps-txt"><strong>Deals ranked by actual value</strong>Our score tells you which properties are underpriced vs. comps before you waste time on bad ones.</div></div>
+        <div class="ps-item"><div class="ps-ico">&#128276;</div><div class="ps-txt"><strong>Alerts before anyone else</strong>You get the text the moment a matching deal hits. Not after your morning Zillow scroll.</div></div>
+        <div class="ps-item"><div class="ps-ico">&#129302;</div><div class="ps-txt"><strong>AI-written investment memos</strong>Plain-English breakdown of why a deal is good or bad, ready to share with a lender or partner.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     FEATURES — Dark section
+     ═══════════════════════════════════════════════════ -->
+<section class="s-dark section-wrap section-centered reveal">
+  <div class="container">
+    <div class="eyebrow">Everything included</div>
+    <h2 class="section-h2">A full investment toolkit<br>in one place</h2>
+    <div class="features-grid reveal-stagger">
+      <div class="feat-card">
+        <div class="feat-icon">&#128225;</div>
+        <div class="feat-title">Live Deal Feed</div>
+        <div class="feat-desc">Scroll deals like a social feed. Filters for price drops, high DOM, multifamily, cash flow, cap rate, and more.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">&#128293;</div>
+        <div class="feat-title">EntryPoint Score (0–100)</div>
+        <div class="feat-desc">One number tells you if a deal is worth your time. Powered by a four-factor algorithm built on real finance principles.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">&#128176;</div>
+        <div class="feat-title">Full Financial Analysis</div>
+        <div class="feat-desc">Cash flow, cap rate, IRR, DSCR — calculated instantly. Adjust sliders to model different scenarios in real time.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">&#129302;</div>
+        <div class="feat-title">AI Deal Memos</div>
+        <div class="feat-desc">Plain-English investment memo for any deal. Ready to share with your lender, partner, or keep on file.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">&#127919;</div>
+        <div class="feat-title">Offer Price Calculator</div>
+        <div class="feat-desc">Work backwards from your target cash flow or cap rate to get the exact maximum offer price to make.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">&#127970;</div>
+        <div class="feat-title">Financing Comparison</div>
+        <div class="feat-desc">Compare conventional, FHA, DSCR, seller finance, and hard money side by side for any deal in one tap.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     ANALYZER / DASHBOARD — Light section
+     ═══════════════════════════════════════════════════ -->
+<section class="s-light section-wrap reveal">
+  <div class="container">
+    <div class="analyzer-intro">
+      <div class="eyebrow">Built-in tools</div>
+      <h2 class="section-h2">Analyze and act on deals instantly</h2>
+      <p class="section-sub" style="margin:0 auto">EntryPoint doesn't just find deals — it helps you decide what to do next.</p>
+    </div>
+    <div class="mockup-chrome" style="background:#0e1116;border-radius:20px;overflow:hidden;border:1px solid rgba(0,0,0,0.12)">
       <div style="background:#12141a;padding:12px 20px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,0.06)">
         <div style="display:flex;gap:6px"><div style="width:11px;height:11px;border-radius:50%;background:#ff5f57"></div><div style="width:11px;height:11px;border-radius:50%;background:#febc2e"></div><div style="width:11px;height:11px;border-radius:50%;background:#28c840"></div></div>
         <div style="flex:1;text-align:center;font-size:11px;color:#556b5e;font-family:'DM Mono',monospace">getentrypoint.com — Deal Analysis</div>
       </div>
-      <!-- App header bar -->
       <div style="background:#0a0b0f;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.05)">
         <div style="display:flex;align-items:center;gap:8px">
           <img src="assets/images/entrypoint-logo-horizontal.png" alt="EntryPoint" style="height:24px;width:auto;object-fit:contain">
@@ -232,40 +696,22 @@ END ORIGINAL MOCKUP -->
           <div style="padding:4px 12px;border-radius:12px;font-size:11px;font-weight:600;color:#556b5e">Financing</div>
         </div>
       </div>
-      <!-- Two panel layout -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-
-        <!-- LEFT: Offer Calculator -->
         <div style="padding:20px;border-right:1px solid rgba(255,255,255,0.06)">
           <div style="font-size:13px;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:4px">Offer Calculator</div>
-          <div style="font-size:11px;color:#556b5e;margin-bottom:16px">Work backwards from your target returns</div>
-          <!-- Optimize for tabs -->
+          <div style="font-size:11px;color:#556b5e;margin-bottom:16px">Calculate your ideal offer price</div>
           <div style="font-size:9px;font-weight:700;color:#556b5e;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px">Optimize For</div>
           <div style="display:flex;gap:6px;margin-bottom:16px">
             <div style="padding:5px 12px;border-radius:12px;font-size:10px;font-weight:700;background:rgba(46,204,113,0.12);border:1px solid rgba(46,204,113,0.3);color:#2ecc71">Cash Flow</div>
             <div style="padding:5px 12px;border-radius:12px;font-size:10px;font-weight:600;border:1px solid rgba(255,255,255,0.1);color:#556b5e">Cap Rate</div>
             <div style="padding:5px 12px;border-radius:12px;font-size:10px;font-weight:600;border:1px solid rgba(255,255,255,0.1);color:#556b5e">IRR</div>
           </div>
-          <!-- Inputs -->
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
-            <div>
-              <div style="font-size:9px;font-weight:600;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Target CF/mo</div>
-              <div style="background:#12141a;border:1.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 10px;font-size:12px;font-family:'DM Mono',monospace;color:#2ecc71">$400</div>
-            </div>
-            <div>
-              <div style="font-size:9px;font-weight:600;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Monthly Rent</div>
-              <div style="background:#12141a;border:1.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 10px;font-size:12px;font-family:'DM Mono',monospace;color:#f0f4f1">$2,800</div>
-            </div>
-            <div>
-              <div style="font-size:9px;font-weight:600;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Expenses</div>
-              <div style="background:#12141a;border:1.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 10px;font-size:12px;font-family:'DM Mono',monospace;color:#f0f4f1">$950</div>
-            </div>
-            <div>
-              <div style="font-size:9px;font-weight:600;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Interest Rate</div>
-              <div style="background:#12141a;border:1.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 10px;font-size:12px;font-family:'DM Mono',monospace;color:#f0f4f1">6.5%</div>
-            </div>
+            <div><div style="font-size:9px;font-weight:600;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Target CF/mo</div><div style="background:#12141a;border:1.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 10px;font-size:12px;font-family:'DM Mono',monospace;color:#2ecc71">$400</div></div>
+            <div><div style="font-size:9px;font-weight:600;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Monthly Rent</div><div style="background:#12141a;border:1.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 10px;font-size:12px;font-family:'DM Mono',monospace;color:#f0f4f1">$2,800</div></div>
+            <div><div style="font-size:9px;font-weight:600;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Expenses</div><div style="background:#12141a;border:1.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 10px;font-size:12px;font-family:'DM Mono',monospace;color:#f0f4f1">$950</div></div>
+            <div><div style="font-size:9px;font-weight:600;color:#556b5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Interest Rate</div><div style="background:#12141a;border:1.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 10px;font-size:12px;font-family:'DM Mono',monospace;color:#f0f4f1">6.5%</div></div>
           </div>
-          <!-- Result box -->
           <div style="background:linear-gradient(135deg,#0d1a12,#0d1520);border:1px solid rgba(46,204,113,0.2);border-radius:12px;padding:16px">
             <div style="font-size:9px;font-weight:700;color:#556b5e;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">Maximum Offer Price</div>
             <div style="font-size:32px;font-weight:800;color:#2ecc71;font-family:'DM Mono',monospace;letter-spacing:-1px;margin-bottom:12px">$247,000</div>
@@ -274,14 +720,10 @@ END ORIGINAL MOCKUP -->
             <div style="display:flex;justify-content:space-between;font-size:10px;padding:5px 0"><span style="color:#556b5e">Projected CF</span><span style="color:#2ecc71;font-family:'DM Mono',monospace;font-weight:700">+$401/mo</span></div>
           </div>
         </div>
-
-        <!-- RIGHT: Financing Comparison -->
         <div style="padding:20px">
           <div style="font-size:13px;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:4px">Financing Comparison</div>
-          <div style="font-size:11px;color:#556b5e;margin-bottom:16px">Compare all loan types side by side</div>
-          <!-- Loan type cards -->
+          <div style="font-size:11px;color:#556b5e;margin-bottom:16px">Compare financing options side-by-side</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-            <!-- Conventional - best -->
             <div style="background:linear-gradient(135deg,rgba(46,204,113,0.06),rgba(46,204,113,0.02));border:1.5px solid #2ecc71;border-radius:12px;padding:12px;position:relative">
               <div style="font-size:8px;font-weight:700;background:#2ecc71;color:#000;padding:2px 7px;border-radius:5px;display:inline-block;margin-bottom:6px">⭐ BEST CF</div>
               <div style="font-size:10px;font-weight:700;color:#556b5e;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">Conventional</div>
@@ -290,7 +732,6 @@ END ORIGINAL MOCKUP -->
               <div><div style="font-size:8px;color:#556b5e;margin-bottom:1px">DSCR</div><div style="font-size:12px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">1.52</div></div>
               <div style="font-size:8px;color:#556b5e;margin-top:5px">20% down</div>
             </div>
-            <!-- FHA -->
             <div style="background:#12141a;border:1.5px solid rgba(255,255,255,0.08);border-radius:12px;padding:12px">
               <div style="font-size:10px;font-weight:700;color:#556b5e;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">FHA</div>
               <div style="margin-bottom:6px"><div style="font-size:8px;color:#556b5e;margin-bottom:1px">Cash Flow</div><div style="font-size:14px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">+$318/mo</div></div>
@@ -298,7 +739,6 @@ END ORIGINAL MOCKUP -->
               <div><div style="font-size:8px;color:#556b5e;margin-bottom:1px">DSCR</div><div style="font-size:12px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">1.38</div></div>
               <div style="font-size:8px;color:#556b5e;margin-top:5px">3.5% down</div>
             </div>
-            <!-- DSCR -->
             <div style="background:#12141a;border:1.5px solid rgba(255,255,255,0.08);border-radius:12px;padding:12px">
               <div style="font-size:10px;font-weight:700;color:#556b5e;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">DSCR</div>
               <div style="margin-bottom:6px"><div style="font-size:8px;color:#556b5e;margin-bottom:1px">Cash Flow</div><div style="font-size:14px;font-weight:700;color:#f0b429;font-family:'DM Mono',monospace">+$195/mo</div></div>
@@ -306,7 +746,6 @@ END ORIGINAL MOCKUP -->
               <div><div style="font-size:8px;color:#556b5e;margin-bottom:1px">DSCR</div><div style="font-size:12px;font-weight:700;color:#f0b429;font-family:'DM Mono',monospace">1.21</div></div>
               <div style="font-size:8px;color:#556b5e;margin-top:5px">No income verify</div>
             </div>
-            <!-- Seller Finance -->
             <div style="background:#12141a;border:1.5px solid rgba(255,255,255,0.08);border-radius:12px;padding:12px">
               <div style="font-size:10px;font-weight:700;color:#556b5e;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">Seller Finance</div>
               <div style="margin-bottom:6px"><div style="font-size:8px;color:#556b5e;margin-bottom:1px">Cash Flow</div><div style="font-size:14px;font-weight:700;color:#2ecc71;font-family:'DM Mono',monospace">+$512/mo</div></div>
@@ -316,236 +755,126 @@ END ORIGINAL MOCKUP -->
             </div>
           </div>
         </div>
-
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- STATS -->
-<div class="stats-strip reveal">
-  <div class="stat"><div class="stat-num" data-target="0" data-text="24/7" id="stat1">24/7</div><div class="stat-lbl">Continuous market monitoring</div></div>
-  <div class="stat"><div class="stat-num" data-target="91" id="stat2">0</div><div class="stat-lbl">Average top deal score this week</div></div>
-  <div class="stat"><div class="stat-num" data-target="38" data-prefix="$" data-suffix="K" id="stat3">$0K</div><div class="stat-lbl">Avg undervaluation flagged</div></div>
-  <div class="stat"><div class="stat-num" data-target="0" data-text="&lt;5s" id="stat4">&lt;5s</div><div class="stat-lbl">Time to full deal analysis</div></div>
-</div>
-
-<!-- HOW IT WORKS -->
-<section class="section section-centered reveal" id="how">
-  <div class="eyebrow">How it works</div>
-  <h2 class="section-h2">From the market to your phone<br>before anyone else sees it</h2>
-  <div class="how-grid">
-    <div class="how-step">
-      <div class="how-num" style="color:var(--green);opacity:1;text-shadow:0 0 20px rgba(46,204,113,0.4)">01</div>
-      <div class="how-icon">&#128225;</div>
-      <div class="how-title">We monitor continuously</div>
-      <div class="how-desc">EntryPoint watches every active listing in Richmond around the clock — not once a day, continuously. New listings get scored the moment they appear.</div>
-    </div>
-    <div class="how-step">
-      <div class="how-num" style="color:var(--green);opacity:1;text-shadow:0 0 20px rgba(46,204,113,0.4)">02</div>
-      <div class="how-icon">&#128202;</div>
-      <div class="how-title">Every deal gets scored</div>
-      <div class="how-desc">Our algorithm scores each property 0–100 based on price vs. true value, cash flow, days on market, and rent-to-price ratio. Only the best surface to the top.</div>
-    </div>
-    <div class="how-step">
-      <div class="how-num" style="color:var(--green);opacity:1;text-shadow:0 0 20px rgba(46,204,113,0.4)">03</div>
-      <div class="how-icon">&#9889;</div>
-      <div class="how-title">You get the alert instantly</div>
-      <div class="how-desc">The moment a deal matches your parameters — score, cash flow, price, neighborhood — you get a text. Full analysis ready before you've even finished reading it.</div>
     </div>
   </div>
 </section>
 
-<!-- PROBLEM / SOLUTION -->
-<section class="section reveal" style="padding-top:0">
-  <div class="eyebrow">The problem</div>
-  <h2 class="section-h2">Most investors are too slow<br>and too manual</h2>
-  <p class="section-sub">Good deals in Richmond go under contract fast. Spreadsheets and Zillow scrolling don't cut it.</p>
-  <div class="ps-grid">
-    <div class="ps-card prob">
-      <div class="ps-label p">&#10008; Without EntryPoint</div>
-      <div class="ps-item"><div class="ps-ico">&#128202;</div><div class="ps-txt"><strong>Spreadsheets are slow and error-prone</strong>You rebuild the same model for every property. By the time you're done, the deal is gone.</div></div>
-      <div class="ps-item"><div class="ps-ico">&#128269;</div><div class="ps-txt"><strong>Zillow gives you no real signal</strong>Every listing looks the same. Nothing tells you what's actually undervalued.</div></div>
-      <div class="ps-item"><div class="ps-ico">&#9203;</div><div class="ps-txt"><strong>Good deals disappear in hours</strong>Serious investors move fast. Casual checking once a day means you're always too late.</div></div>
-      <div class="ps-item"><div class="ps-ico">&#127922;</div><div class="ps-txt"><strong>Decisions based on gut, not data</strong>Most investors buy on vibes and hope for the best.</div></div>
-    </div>
-    <div class="ps-card sol">
-      <div class="ps-label s">&#10003; With EntryPoint</div>
-      <div class="ps-item"><div class="ps-ico">&#9889;</div><div class="ps-txt"><strong>Instant deal clarity</strong>Cash flow, cap rate, IRR, DSCR — calculated automatically the moment you open a deal.</div></div>
-      <div class="ps-item"><div class="ps-ico">&#127919;</div><div class="ps-txt"><strong>Deals ranked by actual value</strong>Our score tells you which properties are underpriced vs. comps before you waste time on bad ones.</div></div>
-      <div class="ps-item"><div class="ps-ico">&#128276;</div><div class="ps-txt"><strong>Alerts before anyone else</strong>You get the text the moment a matching deal hits. Not after your morning Zillow scroll.</div></div>
-      <div class="ps-item"><div class="ps-ico">&#129302;</div><div class="ps-txt"><strong>AI-written investment memos</strong>Plain-English breakdown of why a deal is good or bad, ready to share with a lender or partner.</div></div>
-    </div>
-  </div>
-</section>
 
-<!-- DEAL SCORE SHOWCASE -->
-<div class="showcase-wrap reveal" id="score">
-  <div class="showcase-inner">
-    <div>
-      <div class="score-card">
-        <div class="sc-top">
-          <div><div class="sc-addr">1822 Grove Ave</div><div class="sc-sub">Scott's Addition &middot; Richmond, VA &middot; Single Family</div></div>
-          <div><div class="sc-score-num">91</div><div class="sc-score-lbl">Excellent Deal</div></div>
-        </div>
-        <div class="sc-uv"><div style="font-size:18px">&#128176;</div><div>Underpriced by <strong>$38,000</strong> vs. estimated market value of $287,000</div></div>
-        <div class="sc-metrics">
-          <div class="sc-metric"><div class="sc-metric-lbl">Cash Flow</div><div class="sc-metric-val g">+$620</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Cap Rate</div><div class="sc-metric-val b">8.2%</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">IRR</div><div class="sc-metric-val g">16.4%</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">DSCR</div><div class="sc-metric-val">1.52</div></div>
-        </div>
-        <div class="sc-tags">
-          <span class="sc-tag r">&#128201; 2 Price Drops</span>
-          <span class="sc-tag a">&#9203; 54 Days on Market</span>
-          <span class="sc-tag g">&#128176; 18% Below Comps</span>
-        </div>
-      </div>
-    </div>
-    <div class="showcase-text">
-      <div class="eyebrow">The EntryPoint Score</div>
-      <h2 class="section-h2">One number that tells you if a deal is worth your time</h2>
-      <p class="section-sub" style="max-width:100%">A proprietary 0–100 score built on real investment fundamentals — not Zestimate guesses.</p>
-      <div class="score-breakdown">
-        <div class="score-factor"><div class="sf-icon">&#128201;</div><div class="sf-text"><h4>Price vs. True Value</h4><p>We estimate what the property should sell for and show you exactly how much it's underpriced.</p><div class="sf-pct">40% of score</div></div></div>
-        <div class="score-factor"><div class="sf-icon">&#128181;</div><div class="sf-text"><h4>Cash Flow &amp; Cap Rate</h4><p>Real numbers based on local rent estimates, not national averages.</p><div class="sf-pct">30% of score</div></div></div>
-        <div class="score-factor"><div class="sf-icon">&#9203;</div><div class="sf-text"><h4>Days on Market</h4><p>Long DOM means motivated seller means negotiating power. We track it.</p><div class="sf-pct">15% of score</div></div></div>
-        <div class="score-factor"><div class="sf-icon">&#128200;</div><div class="sf-text"><h4>Rent-to-Price Ratio</h4><p>The single best indicator of long-term cash flow potential.</p><div class="sf-pct">15% of score</div></div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ALERT PREVIEW -->
-<div class="alert-section reveal">
-  <div class="alert-inner">
-    <div class="alert-text">
-      <div class="eyebrow">The Alert System</div>
-      <h2 class="section-h2">Your criteria. Our engine. Instant results.</h2>
-      <p class="section-sub" style="max-width:100%">Set your criteria once using a preset or build your own. EntryPoint monitors the market continuously and fires an Entry Alert the moment something matches — no checking required.</p>
-      <div class="alert-list">
-        <div class="alert-item-row"><div class="ai-icon">&#127919;</div><div class="ai-text"><h4>You set the rules</h4><p>Minimum score, cash flow floor, max price, property type, specific neighborhoods — your criteria, your way.</p></div></div>
-        <div class="alert-item-row"><div class="ai-icon">&#128276;</div><div class="ai-text"><h4>We fire instantly</h4><p>The moment a matching deal hits the market, your Entry Alert fires — because the difference between a deal and a missed deal is often hours.</p></div></div>
-        <div class="alert-item-row"><div class="ai-icon">&#9889;</div><div class="ai-text"><h4>Quick-start presets</h4><p>Cash Flow Investor, Balanced Investor, or Aggressive Deals — pick a preset and you're live in one tap.</p></div></div>
-      </div>
-    </div>
-    <div class="alert-phone">
-      <div class="alert-phone-hdr">&#128247; Live Entry Alert examples</div>
-      <div class="alert-notif new">
-        <div class="alert-notif-top"><div class="alert-dot"></div><div style="font-size:14px">&#128225;</div><div class="alert-notif-app">EntryPoint</div><div class="alert-notif-time">just now</div></div>
-        <div class="alert-notif-body">&#128293; <span class="hi">Score 91</span> &mdash; New deal in <span class="hi">Scott's Addition</span><br><span class="dim">$249K &middot; Cash Flow +$620/mo &middot; 8.2% Cap Rate</span><br><span class="dim">Underpriced by $38K &middot; Tap to analyze &rarr;</span></div>
-      </div>
-      <div class="alert-notif">
-        <div class="alert-notif-top"><div style="font-size:14px">&#128225;</div><div class="alert-notif-app">EntryPoint</div><div class="alert-notif-time">2h ago</div></div>
-        <div class="alert-notif-body">&#128201; <span class="hi">Price Drop</span> &mdash; Manchester duplex<br><span class="dim">Now $239K, down from $265K &middot; Score 84</span><br><span class="dim">44 days on market &middot; View deal &rarr;</span></div>
-      </div>
-      <div class="alert-notif">
-        <div class="alert-notif-top"><div style="font-size:14px">&#128225;</div><div class="alert-notif-app">EntryPoint</div><div class="alert-notif-time">5h ago</div></div>
-        <div class="alert-notif-body">&#127959; <span class="hi">Score 88</span> &mdash; 3-unit in <span class="hi">Manchester</span><br><span class="dim">$310K &middot; 9.1% Cap Rate &middot; CF +$890/mo</span><br><span class="dim">$38K below comps &middot; View deal &rarr;</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- FEATURES -->
-<section class="section section-centered reveal">
-  <div class="eyebrow">Everything included</div>
-  <h2 class="section-h2">A full investment toolkit<br>in one place</h2>
-  <div class="features-grid">
-    <div class="feat-card"><div class="feat-icon">&#128225;</div><div class="feat-title">Live Deal Feed</div><div class="feat-desc">Scroll deals like a social feed. Filters for price drops, high DOM, multifamily, cash flow, cap rate, and more.</div></div>
-    <div class="feat-card"><div class="feat-icon">&#128293;</div><div class="feat-title">EntryPoint Score (0–100)</div><div class="feat-desc">One number tells you if a deal is worth your time. Powered by a four-factor algorithm built on real finance principles.</div></div>
-    <div class="feat-card"><div class="feat-icon">&#128176;</div><div class="feat-title">Full Financial Analysis</div><div class="feat-desc">Cash flow, cap rate, IRR, DSCR — calculated instantly. Adjust sliders to model different scenarios in real time.</div></div>
-    <div class="feat-card"><div class="feat-icon">&#129302;</div><div class="feat-title">AI Deal Memos</div><div class="feat-desc">Plain-English investment memo for any deal. Ready to share with your lender, partner, or keep on file.</div></div>
-    <div class="feat-card"><div class="feat-icon">&#127919;</div><div class="feat-title">Offer Price Calculator</div><div class="feat-desc">Work backwards from your target cash flow or cap rate to get the exact maximum offer price to make.</div></div>
-    <div class="feat-card"><div class="feat-icon">&#127970;</div><div class="feat-title">Financing Comparison</div><div class="feat-desc">Compare conventional, FHA, DSCR, seller finance, and hard money side by side for any deal in one tap.</div></div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<div class="pricing-section reveal" id="pricing">
-  <div class="pricing-inner">
-    <div style="text-align:center">
+<!-- ═══════════════════════════════════════════════════
+     PRICING — Dark section
+     ═══════════════════════════════════════════════════ -->
+<section class="s-dark section-wrap section-centered reveal" id="pricing">
+  <div class="container">
+    <div class="pricing-inner">
       <div class="eyebrow">Pricing</div>
       <h2 class="section-h2">Simple pricing.<br>Cancel anytime.</h2>
-      <p class="section-sub" style="max-width:460px;margin:0 auto">One good deal pays for years of EntryPoint.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-tier">Free</div>
-        <div class="price-amount">$0<span>/mo</span></div>
-        <div class="price-desc">Explore deals and learn the market. No commitment.</div>
-        <div class="price-divider"></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span>Live deal feed</span></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span>EntryPoint Score on every listing</span></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span>Basic deal analysis</span></div>
-        <div class="price-feature" style="opacity:.4"><span class="price-check">&#8212;</span><span>No deal alerts</span></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span>Limited AI memos</span></div>
-      </div>
-      <div class="price-card featured">
-        <div class="price-badge">MOST POPULAR</div>
-        <div class="price-tier">Pro</div>
-        <div class="price-amount">$39<span>/mo</span></div>
-        <div class="price-desc">Everything you need to find, analyze and act on deals faster than anyone else.</div>
-        <div class="price-divider"></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span><strong>Instant Entry Alerts</strong></span></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span>Custom alert parameters</span></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span>Unlimited AI deal memos</span></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span>Full financial analysis suite</span></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span>Saved properties &amp; portfolio tracking</span></div>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Team</div>
-        <div class="price-amount">$99<span>/mo</span></div>
-        <div class="price-desc">Built for teams managing multiple markets, clients and deals.</div>
-        <div class="price-divider"></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span>Everything in Pro</span></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span><strong>Multiple user seats</strong></span></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span>Client deal sharing</span></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span>Priority alerts</span></div>
-        <div class="price-feature"><span class="price-check">&#10003;</span><span><strong>National Coverage</strong> — Entry Alerts across cities &amp; states nationwide</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MOAT / ACCURACY -->
-<div class="moat-section reveal">
-  <div class="moat-inner">
-    <div class="eyebrow">Why EntryPoint gets better over time</div>
-    <h2 class="section-h2">The score learns.<br>Your edge compounds.</h2>
-    <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:20px;background:var(--green-dim);border:1px solid rgba(46,204,113,0.2);font-size:12px;font-weight:600;color:var(--green);margin-top:12px">⚡ Powered by real transaction data &amp; market performance</div>
-    <p class="section-sub" style="max-width:100%;margin:0 auto">Most tools give you static data. EntryPoint tracks real outcomes and gets smarter with every deal.</p>
-    <div class="moat-card">
-      <div class="moat-steps">
-        <div class="moat-step"><div class="moat-step-icon">&#127919;</div><div class="moat-step-title">We flag a deal</div><div class="moat-step-desc">Score 87. Underpriced by $32K. Alert sent to matching users.</div></div>
-        <div class="moat-step"><div class="moat-step-icon">&#128200;</div><div class="moat-step-title">We track the outcome</div><div class="moat-step-desc">Did it sell? How fast? At what price? Was our value estimate accurate?</div></div>
-        <div class="moat-step"><div class="moat-step-icon">&#129504;</div><div class="moat-step-title">The score improves</div><div class="moat-step-desc">Every outcome makes the algorithm smarter and your edge compounds over time.</div></div>
+      <p class="section-sub" style="max-width:460px;margin:0 auto 72px">One good deal pays for years of EntryPoint.</p>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-tier">Free</div>
+          <div class="price-amount">$0<span>/mo</span></div>
+          <div class="price-desc">Explore deals and learn the market. No commitment.</div>
+          <div class="price-divider"></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span>Live deal feed</span></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span>EntryPoint Score on every listing</span></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span>Basic deal analysis</span></div>
+          <div class="price-feature" style="opacity:.4"><span class="price-check">&#8212;</span><span>No deal alerts</span></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span>Limited AI memos</span></div>
+        </div>
+        <div class="price-card featured">
+          <div class="price-badge">MOST POPULAR</div>
+          <div class="price-tier">Pro</div>
+          <div class="price-amount">$39<span>/mo</span></div>
+          <div class="price-desc">Everything you need to find, analyze and act on deals faster than anyone else.</div>
+          <div class="price-divider"></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span><strong>Instant Entry Alerts</strong></span></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span>Custom alert parameters</span></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span>Unlimited AI deal memos</span></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span>Full financial analysis suite</span></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span>Saved properties &amp; portfolio tracking</span></div>
+        </div>
+        <div class="price-card">
+          <div class="price-tier">Team</div>
+          <div class="price-amount">$99<span>/mo</span></div>
+          <div class="price-desc">Built for teams managing multiple markets, clients and deals.</div>
+          <div class="price-divider"></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span>Everything in Pro</span></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span><strong>Multiple user seats</strong></span></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span>Client deal sharing</span></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span>Priority alerts</span></div>
+          <div class="price-feature"><span class="price-check">&#10003;</span><span><strong>National Coverage</strong> — Entry Alerts across cities &amp; states nationwide</span></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- EMAIL CAPTURE -->
-<div class="cta-section" id="waitlist">
-  <div class="cta-orb"></div>
-  <div class="cta-inner reveal">
-    <div class="cta-badge">&#128293; Early Access</div>
-    <h2 class="cta-h2">Never miss a great deal again.</h2>
-    <p class="cta-sub">Be among the first investors in Richmond to get EntryPoint. Early members get 3 months of Pro free at launch.</p>
-    <div id="ctaSuccess" class="cta-success">&#10003; You're on the list — we'll be in touch before launch.</div>
-    <div class="cta-form" id="ctaForm">
-      <input class="cta-input" id="ctaEmail" type="email" placeholder="Your email address">
-      <button class="cta-btn" onclick="ctaSubmit()">Get Early Access &#8594;</button>
+
+<!-- ═══════════════════════════════════════════════════
+     MOAT — Light section
+     ═══════════════════════════════════════════════════ -->
+<section class="s-light section-wrap reveal">
+  <div class="container">
+    <div class="moat-inner">
+      <div class="eyebrow">Why EntryPoint gets better over time</div>
+      <h2 class="section-h2">The score learns.<br>Your edge compounds.</h2>
+      <div class="moat-badge">&#9889; Powered by real transaction data &amp; market performance</div>
+      <p class="section-sub" style="max-width:100%;margin:16px auto 0">Most tools give you static data. EntryPoint tracks real outcomes and gets smarter with every deal.</p>
+      <div class="moat-card">
+        <div class="moat-steps">
+          <div class="moat-step">
+            <div class="moat-step-icon">&#127919;</div>
+            <div class="moat-step-title">We flag a deal</div>
+            <div class="moat-step-desc">Score 87. Underpriced by $32K. Alert sent to matching users.</div>
+          </div>
+          <div class="moat-step">
+            <div class="moat-step-icon">&#128200;</div>
+            <div class="moat-step-title">We track the outcome</div>
+            <div class="moat-step-desc">Did it sell? How fast? At what price? Was our value estimate accurate?</div>
+          </div>
+          <div class="moat-step">
+            <div class="moat-step-icon">&#129504;</div>
+            <div class="moat-step-title">The score improves</div>
+            <div class="moat-step-desc">Every outcome makes the algorithm smarter and your edge compounds over time.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
+
+<!-- ═══════════════════════════════════════════════════
+     CTA — Dark, full bleed
+     ═══════════════════════════════════════════════════ -->
+<section class="s-dark" id="waitlist">
+  <div class="cta-section-inner">
+    <div class="cta-inner reveal">
+      <div class="cta-badge">&#128293; Early Access</div>
+      <h2 class="cta-h2">Never miss a great deal again.</h2>
+      <p class="cta-sub">Be among the first investors in Richmond to get EntryPoint. Early members get 3 months of Pro free at launch.</p>
+      <div id="ctaSuccess" class="cta-success">&#10003; You're on the list — we'll be in touch before launch.</div>
+      <div class="cta-form" id="ctaForm">
+        <input class="cta-input" id="ctaEmail" type="email" placeholder="Your email address">
+        <button class="cta-btn" onclick="ctaSubmit()">Get Early Access &rarr;</button>
+      </div>
+      <div class="cta-disclaimer">No credit card. No spam. Unsubscribe anytime.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><a href="/" class="nav-logo" style="text-decoration:none"><img src="assets/images/entrypoint-logo-horizontal.png" alt="EntryPoint" style="height:28px;width:auto;object-fit:contain"></a></div>
-  <div class="footer-center" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center">
+  <div>
+    <a href="/" class="nav-logo"><img src="assets/images/entrypoint-logo-horizontal.png" alt="EntryPoint" style="height:28px;width:auto;object-fit:contain"></a>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center">
     <a href="https://www.tiktok.com/@getentrypoint" target="_blank" class="footer-social" title="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.14 8.14 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg></a>
     <a href="https://www.instagram.com/getentrypoint" target="_blank" class="footer-social" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-    <span class="footer-divider">·</span>
+    <a href="https://www.linkedin.com/company/getentrypoint" target="_blank" class="footer-social" title="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0121 5V19A2 2 0 0119 21H5A2 2 0 013 19V5A2 2 0 015 3H19ZM8.34 18.34V9.67H5.67V18.34H8.34ZM7 8.5A1.56 1.56 0 107 5.39 1.56 1.56 0 007 8.5ZM18.34 18.34V13.6C18.34 11.06 16.98 9.37 14.37 9.37A2.86 2.86 0 0011.8 10.78H11.73V9.67H9.17V18.34H11.84V14.05C11.84 12.92 12.05 11.82 13.45 11.82S14.84 13.11 14.84 14.12V18.34H18.34Z"/></svg></a>
+    <span style="color:#6a8c78">·</span>
     <a href="disclaimer.html" class="footer-link">Disclaimer</a>
     <a href="privacy.html" class="footer-link">Privacy</a>
     <a href="terms.html" class="footer-link">Terms</a>
@@ -554,7 +883,23 @@ END ORIGINAL MOCKUP -->
   <div class="footer-copy">&copy; 2026 EntryPoint. Richmond, VA.</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/script.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal, .reveal-stagger');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 
 <!-- MODALS -->
 <div class="ep-modal-overlay" id="modal-privacy" onclick="if(event.target===this)closeModal('privacy')">
@@ -566,17 +911,13 @@ END ORIGINAL MOCKUP -->
     <div class="ep-modal-body">
       <div class="modal-badge">Last updated: March 2026</div>
       <h3>What Data We Collect</h3>
-      <p>When you join our waitlist, we collect only your <strong>email address</strong>. We do not collect names, phone numbers, payment information, or any other personal data at this stage. No account is created and no cookies are used beyond what is technically necessary to operate this site.</p>
+      <p>When you join our waitlist, we collect only your <strong>email address</strong>. We do not collect names, phone numbers, payment information, or any other personal data at this stage.</p>
       <h3>How We Use Your Email</h3>
-      <p>Your email address is used exclusively to provide you with early access updates, product launch announcements, and EntryPoint-related communications. We will not send you unrelated promotional content from third parties.</p>
+      <p>Your email address is used exclusively to provide you with early access updates, product launch announcements, and EntryPoint-related communications.</p>
       <h3>Data Sharing</h3>
-      <p>We do not sell, rent, trade, or share your email address with any third party for marketing purposes. Your data will never be monetized or distributed outside of EntryPoint.</p>
-      <h3>Data Security</h3>
-      <p>Email addresses are stored securely using industry-standard encryption. We apply reasonable administrative and technical safeguards to protect your information from unauthorized access, disclosure, or misuse.</p>
+      <p>We do not sell, rent, trade, or share your email address with any third party for marketing purposes.</p>
       <h3>Your Rights</h3>
-      <p>You may request removal of your email from our waitlist at any time by emailing us at <a href="/cdn-cgi/l/email-protection#19717c757576597e7c6d7c776d6b60697670776d377a7674"><span class="__cf_email__" data-cfemail="422a272e2e2d02252736272c36303b322d2b2c366c212d2f">[email&#160;protected]</span></a>. We will process removal requests within 7 business days.</p>
-      <h3>Contact</h3>
-      <p>Questions about this policy? Contact us at <a href="/cdn-cgi/l/email-protection#563e333a3a3916313322333822242f26393f38227835393b"><span class="__cf_email__" data-cfemail="80e8e5ececefc0e7e5f4e5eef4f2f9f0efe9eef4aee3efed">[email&#160;protected]</span></a>.</p>
+      <p>You may request removal of your email from our waitlist at any time by emailing us at <a href="mailto:hello@getentrypoint.com">hello@getentrypoint.com</a>.</p>
     </div>
   </div>
 </div>
@@ -590,17 +931,13 @@ END ORIGINAL MOCKUP -->
     <div class="ep-modal-body">
       <div class="modal-badge">Last updated: March 2026</div>
       <h3>Not Financial Advice</h3>
-      <p>EntryPoint is an informational tool only. Nothing on this platform constitutes financial, investment, legal, or tax advice. All deal scores, cash flow estimates, cap rate calculations, and valuation figures are provided for informational purposes only. You should consult a licensed financial advisor before making any investment decision.</p>
+      <p>EntryPoint is an informational tool only. Nothing on this platform constitutes financial, investment, legal, or tax advice. All deal scores, cash flow estimates, cap rate calculations, and valuation figures are provided for informational purposes only.</p>
       <h3>No Guarantee of Returns</h3>
-      <p>Past performance and historical market data do not guarantee future results. EntryPoint makes no representations or warranties regarding the accuracy, completeness, or fitness for purpose of any analysis, estimate, or alert provided through the platform. Real estate investment carries inherent risk including the possible loss of principal.</p>
+      <p>Past performance and historical market data do not guarantee future results. Real estate investment carries inherent risk including the possible loss of principal.</p>
       <h3>Use at Your Own Risk</h3>
-      <p>You access and use EntryPoint at your sole risk. We are not liable for any financial loss, investment decision, or outcome arising from your use of this platform or reliance on any information provided herein.</p>
-      <h3>Access and Termination</h3>
-      <p>EntryPoint reserves the right to modify, suspend, or terminate access to the platform at any time without notice. We reserve the right to update these terms at any time. Continued use of the platform following any update constitutes acceptance of the revised terms.</p>
-      <h3>Intellectual Property</h3>
-      <p>All content, branding, algorithms, and design elements on EntryPoint are the intellectual property of EntryPoint and may not be reproduced, distributed, or used without express written permission.</p>
+      <p>You access and use EntryPoint at your sole risk. We are not liable for any financial loss, investment decision, or outcome arising from your use of this platform.</p>
       <h3>Contact</h3>
-      <p>Questions about these terms? Contact us at <a href="/cdn-cgi/l/email-protection#137b767f7f7c53747667767d67616a637c7a7d673d707c7e"><span class="__cf_email__" data-cfemail="1e767b7272715e797b6a7b706a6c676e7177706a307d7173">[email&#160;protected]</span></a>.</p>
+      <p>Questions? Contact us at <a href="mailto:hello@getentrypoint.com">hello@getentrypoint.com</a>.</p>
     </div>
   </div>
 </div>
@@ -614,7 +951,7 @@ END ORIGINAL MOCKUP -->
     <div class="ep-modal-body">
       <div class="modal-badge">We typically respond within 24 hours</div>
       <h3>Email</h3>
-      <p>For support, questions, or partnership inquiries reach us at:<br><a href="/cdn-cgi/l/email-protection#f29a979e9e9db2959786979c86808b829d9b9c86dc919d9f"><strong><span class="__cf_email__" data-cfemail="7018151c1c1f30171504151e040209001f191e045e131f1d">[email&#160;protected]</span></strong></a></p>
+      <p>For support, questions, or partnership inquiries:<br><a href="mailto:hello@getentrypoint.com"><strong>hello@getentrypoint.com</strong></a></p>
       <h3>Follow Us</h3>
       <p>Stay up to date on product updates, deal insights, and launch news.</p>
       <div class="social-row">
@@ -623,6 +960,17 @@ END ORIGINAL MOCKUP -->
           TikTok — @getentrypoint
         </a>
         <a href="https://www.instagram.com/getentrypoint" target="_blank" class="social-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram — @getentrypoint
+        </a>
+        <a href="https://www.linkedin.com/company/getentrypoint" target="_blank" class="social-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0121 5V19A2 2 0 0119 21H5A2 2 0 013 19V5A2 2 0 015 3H19ZM8.34 18.34V9.67H5.67V18.34H8.34ZM7 8.5A1.56 1.56 0 107 5.39 1.56 1.56 0 007 8.5ZM18.34 18.34V13.6C18.34 11.06 16.98 9.37 14.37 9.37A2.86 2.86 0 0011.8 10.78H11.73V9.67H9.17V18.34H11.84V14.05C11.84 12.92 12.05 11.82 13.45 11.82S14.84 13.11 14.84 14.12V18.34H18.34Z"/></svg>
+          LinkedIn — getentrypoint
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

@@ -33,10 +33,12 @@ function submitWaitlist(email) {
 }
 
 // ── Hero form ─────────────────────────────────────────────────────────────────
+var EMAIL_VALID = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 function heroSubmit() {
   var input = document.getElementById('heroEmail');
   var email = input.value.trim();
-  if (!email || !email.includes('@')) {
+  if (!EMAIL_VALID.test(email)) {
     input.style.borderColor = 'var(--red)';
     return;
   }
@@ -50,7 +52,7 @@ function heroSubmit() {
 function ctaSubmit() {
   var input = document.getElementById('ctaEmail');
   var email = input.value.trim();
-  if (!email || !email.includes('@')) {
+  if (!EMAIL_VALID.test(email)) {
     input.style.borderColor = 'var(--red)';
     return;
   }
@@ -71,7 +73,7 @@ document.getElementById('ctaEmail').addEventListener('keydown', function (e) {
 });
 
 // ── Scroll reveal ─────────────────────────────────────────────────────────────
-var reveals = document.querySelectorAll('.reveal');
+var reveals = document.querySelectorAll('.reveal, .reveal-stagger');
 var obs = new IntersectionObserver(function (entries) {
   entries.forEach(function (e) {
     if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
@@ -101,7 +103,7 @@ function closeModal(name) {
 
 // ── Stat count-up animation ───────────────────────────────────────────────────
 (function () {
-  var statBar = document.querySelector('.stats-strip');
+  var statBar = document.querySelector('.stats-grid');
   if (!statBar) return;
   var animated = false;
   var obs2 = new IntersectionObserver(function (entries) {
